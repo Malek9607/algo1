@@ -1,0 +1,42 @@
+Début AventurePhrase
+
+    // Déclaration des variables - les compteurs de notre aventure
+    longueur_phrase ← 0
+    nombre_mots ← 0
+    nombre_voyelles ← 0
+    voyelles ← "aeiouAEIOU"  // Les voyelles magiques !
+
+    // Demander à l'utilisateur de participer à une aventure linguistique
+    Afficher "Bienvenue dans l'analyse magique de votre phrase !"
+    Afficher "Veuillez entrer une phrase mystérieuse, qui se termine par un point :"
+    phrase ← Lire la phrase
+
+    // Parcourir chaque caractère comme un voyage à travers la phrase
+    Pour chaque caractère c dans phrase faire
+        longueur_phrase ← longueur_phrase + 1
+        
+        // Si le caractère est une voyelle magique
+        Si c ∈ voyelles alors
+            nombre_voyelles ← nombre_voyelles + 1
+            Afficher "Ah! Une voyelle magique : ", c
+        Fin Si
+
+        // Si c'est un espace, un nouveau mot est découvert
+        Si c = ' ' alors
+            nombre_mots ← nombre_mots + 1
+            Afficher "Un mot terminé, passons au suivant !"
+        Fin Si
+    Fin Pour
+
+    // Compter le dernier mot si la phrase ne se termine pas par un espace
+    Si longueur_phrase > 1 alors
+        nombre_mots ← nombre_mots + 1
+    Fin Si
+
+    // Conclusion de l'analyse et révélations finales
+    Afficher "Analyse terminée ! Voici les secrets de votre phrase :"
+    Afficher "Longueur de la phrase : ", longueur_phrase - 1, " (le point ne compte pas)"
+    Afficher "Nombre de mots trouvés : ", nombre_mots
+    Afficher "Nombre de voyelles magiques : ", nombre_voyelles
+
+Fin AventurePhrase
